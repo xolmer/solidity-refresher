@@ -50,3 +50,32 @@ contract StateVariable {
         myAddress = address(1);
     }
 }
+
+contract GlobalVariable {
+    function glovalVariables()
+        external
+        view
+        returns (
+            address,
+            uint,
+            uint
+        )
+    {
+        address sender = msg.sender;
+        uint timestamp = block.timestamp;
+        uint blockNum = block.number;
+        return (sender, timestamp, blockNum);
+    }
+}
+
+contract ViewAndPureFunctions {
+    uint public x = 1;
+
+    function addToX(uint y) public view returns (uint) {
+        return x + y;
+    }
+
+    function add(uint i, uint j) public pure returns (uint) {
+        return i + j;
+    }
+}
