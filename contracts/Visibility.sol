@@ -38,9 +38,9 @@ contract B is A {
         return true;
     }
 
-    function qux() external pure override returns (bool) {
-        return true;
-    }
+    // function qux() external pure override returns (bool) {
+    //     return true;
+    // }
 
     function useBar() external pure returns (bool) {
         return bar();
